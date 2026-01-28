@@ -1,0 +1,88 @@
+{
+    "dienstleistungen": [
+        {
+            "id": 1,
+            "title": "Transport",
+            "image": "/images/transport.jpg",
+            "description": "Zuverlässige Logistiklösungen für Ihre Güter. Wir bringen Ihre Ware sicher und pünktlich ans Ziel.",
+            "details": [
+                "Internationale Logistik",
+                "Express-Lieferungen",
+                "Schwerlasttransporte",
+                "Kurierfahrten"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Vertrieb",
+            "image": "/images/marketing.jpg",
+            "description": "Strategischer Vertrieb für maximalen Markterfolg. Wir optimieren Ihre Verkaufsprozesse und steigern Ihren Umsatz.",
+            "details": [
+                "Marktanalyse",
+                "Sales-Funnel Optimierung",
+                "Kundengewinnung",
+                "B2B Vertrieb"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Arbeit Rund ums Haus",
+            "image": "/images/Garten.jpg",
+            "description": "Umfassende Betreuung für Ihr Zuhause. Von Winterdienst bis Sanierung – wir kümmern uns darum.",
+            "details": [
+                "Gartenpflege",
+                "Winterdienst",
+                "Fassadenreinigung",
+                "Kleinreparaturen"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Reinigung",
+            "image": "/images/reinigung.jpg",
+            "description": "Professionelle Reinigung für glänzende Ergebnisse. Für Gewerbe und Privathaushalte.",
+            "details": [
+                "Büroreinigung",
+                "Fensterreinigung",
+                "Endreinigung",
+                "Teppichreinigung"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Baustoffhandel",
+            "image": "/images/baustoffe.jpg",
+            "description": "Hochwertige Baustoffe für jedes Projekt. Qualität, auf die Sie bauen können.",
+            "details": [
+                "Dämmstoffe",
+                "Rohbau",
+                "Gartenbaustoffe",
+                "Werkzeuge"
+            ]
+        },
+        {
+            "id": 6,
+            "title": "Marketing / IT",
+            "image": "/images/it.jpg",
+            "description": "Digitale Lösungen und kreatives Marketing. Wir bringen Ihr Unternehmen in das digitale Zeitalter.",
+            "details": [
+                "Webdesign",
+                "SEO Optimierung",
+                "Social Media",
+                "Branding"
+            ]
+        },
+        {
+            "id": 7,
+            "title": "Personalservice",
+            "image": "/images/Winterdienst.jpg",
+            "description": "Kompetentes Personal für Ihren Bedarf. Wir finden die passenden Mitarbeiter für Ihr Unternehmen.",
+            "details": [
+                "Arbeitnehmerüberlassung",
+                "Personalvermittlung",
+                "Headhunting",
+                "Recruiting"
+            ]
+        }
+    ]
+}
