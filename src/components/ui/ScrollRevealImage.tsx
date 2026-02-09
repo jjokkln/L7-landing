@@ -7,9 +7,10 @@ import { cn } from "@/lib/utils";
 
 interface ScrollRevealImageProps extends ImageProps {
     wrapperClassName?: string;
+    overlayColor?: string;
 }
 
-export function ScrollRevealImage({ wrapperClassName, className, ...props }: ScrollRevealImageProps) {
+export function ScrollRevealImage({ wrapperClassName, className, overlayColor, ...props }: ScrollRevealImageProps) {
     const containerRef = useRef<HTMLDivElement>(null);
 
     const { scrollYProgress } = useScroll({
@@ -40,8 +41,8 @@ export function ScrollRevealImage({ wrapperClassName, className, ...props }: Scr
                 />
                 {/* Black curtain overlay */}
                 <motion.div
-                    style={{ y: curtainY }}
-                    className="absolute inset-0 bg-black z-10"
+                    style={{ y: curtainY, backgroundColor: overlayColor || "black" }} // dynamic color
+                    className="absolute inset-0 z-10"
                 />
             </motion.div>
         </div>

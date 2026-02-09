@@ -14,6 +14,19 @@ interface ServiceSectionProps {
 export function ServiceSection({ service, index }: ServiceSectionProps) {
     const isEven = index % 2 === 0;
 
+    // Colors for the service cards reveal effect
+    const overlayColors = [
+        "#6b7280", // 1. Grau
+        "#f97316", // 2. Orange
+        "#298000ff", // 3. Oliv-Grün
+        "#000000", // 4. Schwarz
+        "#ba831cff", // 5. Braun
+        "#0e3954ff", // 6. Blau
+        "#d1d5db", // 7. Hellgrau
+    ];
+
+    const overlayColor = overlayColors[index % overlayColors.length];
+
     return (
         <section className="min-h-screen w-full flex items-center justify-center p-8 md:p-16 relative overflow-hidden">
             <div className={cn(
@@ -59,11 +72,11 @@ export function ServiceSection({ service, index }: ServiceSectionProps) {
 
                     <Link
                         href={`/services/${service.id}`}
-                        className="group inline-flex items-center text-sm font-medium tracking-widest uppercase border-b border-black pb-1 hover:text-gray-600 hover:border-gray-400 transition-colors duration-300"
+                        className="group flex w-fit items-center gap-2 rounded-full bg-black px-6 py-3 text-sm font-semibold text-white transition-all hover:scale-105 hover:bg-gray-900 active:scale-95 shadow-lg hover:shadow-xl"
                     >
                         Mehr Erfahren
-                        <svg className="ml-2 w-4 h-4 transform transition-transform group-hover:translate-x-1 duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                         </svg>
                     </Link>
 
@@ -102,6 +115,7 @@ export function ServiceSection({ service, index }: ServiceSectionProps) {
                         fill
                         className="object-cover"
                         wrapperClassName="w-full h-full shadow-2xl"
+                        overlayColor={overlayColor}
                     />
                 </div>
             </div>
