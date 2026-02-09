@@ -3,7 +3,7 @@
         {
             "id": 1,
             "title": "Transport",
-            "image": "/images/transport.jpg",
+            "image": "/images/transport.webp",
             "description": "Zuverlässige Logistiklösungen für Ihre Güter. Wir bringen Ihre Ware sicher und pünktlich ans Ziel.",
             "details": [
                 "Internationale Logistik",
@@ -15,7 +15,7 @@
         {
             "id": 2,
             "title": "Vertrieb",
-            "image": "/images/marketing.jpg",
+            "image": "/images/marketing.webp",
             "description": "Strategischer Vertrieb für maximalen Markterfolg. Wir optimieren Ihre Verkaufsprozesse und steigern Ihren Umsatz.",
             "details": [
                 "Marktanalyse",
@@ -27,7 +27,7 @@
         {
             "id": 3,
             "title": "Arbeit Rund ums Haus",
-            "image": "/images/Garten.jpg",
+            "image": "/images/Garten.webp",
             "description": "Umfassende Betreuung für Ihr Zuhause. Von Winterdienst bis Sanierung – wir kümmern uns darum.",
             "details": [
                 "Gartenpflege",
@@ -39,7 +39,7 @@
         {
             "id": 4,
             "title": "Reinigung",
-            "image": "/images/reinigung.jpg",
+            "image": "/images/reinigung.webp",
             "description": "Professionelle Reinigung für glänzende Ergebnisse. Für Gewerbe und Privathaushalte.",
             "details": [
                 "Büroreinigung",
@@ -51,7 +51,7 @@
         {
             "id": 5,
             "title": "Baustoffhandel",
-            "image": "/images/baustoffe.jpg",
+            "image": "/images/baustoffe.webp",
             "description": "Hochwertige Baustoffe für jedes Projekt. Qualität, auf die Sie bauen können.",
             "details": [
                 "Dämmstoffe",
@@ -63,7 +63,7 @@
         {
             "id": 6,
             "title": "Marketing / IT",
-            "image": "/images/it.jpg",
+            "image": "/images/it.webp",
             "description": "Digitale Lösungen und kreatives Marketing. Wir bringen Ihr Unternehmen in das digitale Zeitalter.",
             "details": [
                 "Webdesign",
@@ -75,7 +75,7 @@
         {
             "id": 7,
             "title": "Personalservice",
-            "image": "/images/Winterdienst.jpg",
+            "image": "/images/Winterdienst.webp",
             "description": "Kompetentes Personal für Ihren Bedarf. Wir finden die passenden Mitarbeiter für Ihr Unternehmen.",
             "details": [
                 "Arbeitnehmerüberlassung",
