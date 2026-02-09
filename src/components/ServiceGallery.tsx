@@ -42,7 +42,7 @@ export function ServiceGallery() {
                         <img
                             src={item.imageSrc}
                             alt={item.title}
-                            className="absolute inset-0 w-full h-full object-cover"
+                            className="absolute inset-0 !w-full !h-full object-cover"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                         <div className="absolute bottom-0 left-0 p-6 text-white text-left">

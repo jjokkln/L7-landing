@@ -203,25 +203,51 @@ export function FocusRail({
                         const blur = isCenter ? 0 : dist * 3; // Reduced blur
                         const brightness = isCenter ? 1 : 0.9; // Adjusted brightness
 
+                        // Animation Logic: "Unfold from inside out"
+                        // Left items (offset < 0): Origin is right (inside - 1), scale X from 0
+                        // Right items (offset > 0): Origin is left (inside - 0), scale X from 0
+                        // Center item (offset === 0): Origin is bottom (1), scale Y from 0
+
+                        let initialAnim = {};
+
+                        if (isCenter) {
+                            initialAnim = { scaleY: 0, opacity: 0, originY: 1, originX: 0.5 };
+                        } else if (offset < 0) {
+                            // Left side
+                            initialAnim = { scaleX: 0, opacity: 0, originX: 1, originY: 0.5 };
+                        } else {
+                            // Right side
+                            initialAnim = { scaleX: 0, opacity: 0, originX: 0, originY: 0.5 };
+                        }
+
                         return (
                             <motion.div
                                 key={absIndex}
                                 className={cn(
-                                    "absolute aspect-[3/4] w-[260px] md:w-[300px] rounded-2xl bg-gray-100 shadow-2xl transition-shadow duration-300",
+                                    "absolute aspect-[3/4] w-[260px] md:w-[300px] rounded-2xl shadow-2xl transition-shadow duration-300",
                                     isCenter ? "z-20 shadow-xl" : "z-10 shadow-md"
                                 )}
-                                initial={false}
+                                initial={initialAnim}
                                 animate={{
                                     x: xOffset,
                                     z: zOffset,
-                                    scale: scale, // Trigger "tap" via TAP_SPRING when this changes
+                                    scale: scale,
+                                    scaleX: 1,
+                                    scaleY: 1,
                                     rotateY: rotateY,
                                     opacity: opacity,
+                                    originX: 0.5, // Revert to center for smooth rotation/movement after entrance
+                                    originY: 0.5, // Revert to center
                                     filter: `blur(${blur}px) brightness(${brightness})`,
                                 }}
                                 transition={{
                                     default: BASE_SPRING,
-                                    scale: TAP_SPRING
+                                    scale: TAP_SPRING,
+                                    scaleX: { type: "spring", stiffness: 200, damping: 20 },
+                                    scaleY: { type: "spring", stiffness: 200, damping: 20 },
+                                    opacity: { duration: 0.5 },
+                                    originX: { duration: 0.8, ease: "easeInOut" }, // Smoothly transition origin
+                                    originY: { duration: 0.8, ease: "easeInOut" }
                                 }}
                                 style={{
                                     transformStyle: "preserve-3d",
@@ -233,11 +259,11 @@ export function FocusRail({
                                 <img
                                     src={item.imageSrc}
                                     alt={item.title}
-                                    className="h-full w-full rounded-2xl object-cover pointer-events-none"
+                                    className="absolute inset-0 !h-full !w-full rounded-2xl object-cover pointer-events-none"
                                 />
 
-                                {/* Lighting layers - Adjusted for light theme */}
-                                <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-black/0 to-black/20 pointer-events-none" />
+                                {/* Lighting & Shadow overlay for depth */}
+                                <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/60 via-black/0 to-transparent pointer-events-none" />
                             </motion.div>
                         );
                     })}
